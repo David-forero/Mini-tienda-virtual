@@ -1,0 +1,38 @@
+<form method="POST" action="/checkout" class="card">
+    <div class="top-section">
+        <img id="img-container" src="img/1.png" alt="">
+    </div>
+
+    <nav>
+        <img onclick="imagen(this)" src="img/1.png" alt="">
+        <img onclick="imagen(this)" src="img/2.png" alt="">
+        <img onclick="imagen(this)" src="img/3.png" alt="">
+    </nav>
+    <div class="precio">$50</div>
+
+    <div class="producto-info">
+        <div class="name">Sony vegas 11</div><br>
+        <div class="descrip">Asombroso editor de video con un insterfaz agradable y facil de usar.</div>
+        
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key="pk_test_gM2ZwEHriwHYScvQhIOTkhMX00VdiBXkDX" data-amount="5000"
+        data-name="Noshima"
+        data-description="Producto de software"
+        data-image="http://getbarkeep.org/wp-content/uploads/2019/05/imagen-.jpg"
+        date-locale="auto">
+        </script>
+        <button type="submit">
+            Comprar <i class="fa fa-shopping-cart"></i>
+        </button>
+        <script>
+            document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+        </script>
+    </div>
+</form>
+
+<script>
+    var container = document.getElementById('img-container');
+    function imagen(image){
+        container.src = image.src;
+    }
+</script>
